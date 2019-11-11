@@ -17,7 +17,7 @@ class SecondViewController: UIViewController {
         
         let randomNumber = Int.random(in: 1...3)
         let myImage = UIImage(named: "\(starColor)\(randomNumber)")
-        
+        print(myImage)
         startImageView.image = myImage
     }
     
