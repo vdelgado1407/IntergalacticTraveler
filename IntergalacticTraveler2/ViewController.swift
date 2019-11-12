@@ -17,9 +17,15 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nameOfColor = colorTextField.text!
+        if let data = colorTextField.text, data != "Blue", data != "Red" {
         let NVC = segue.destination as! SecondViewController
-        NVC.starColor = nameOfColor
+        NVC.starColor = data
+        } else {
+            let alert = UIAlertController (title: "Error", message: "There is no data.", preferredStyle: .alert)
+            let button = UIAlertAction (title: "OK", style: .default, handler: nil)
+            alert.addAction(button)
+            present(alert, animated: true, completion: nil)
+        }
     }
 
 }
