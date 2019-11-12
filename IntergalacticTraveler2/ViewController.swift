@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let data = colorTextField.text, data != "Blue", data != "Red" {
+        if let data = colorTextField.text, data != "blue" || data != "red" {
         let NVC = segue.destination as! SecondViewController
         NVC.starColor = data
         } else {
